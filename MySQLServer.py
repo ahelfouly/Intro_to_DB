@@ -11,12 +11,7 @@ except Exception as db_connection_err:
     exit()
 
 cursor = mydb.cursor()
-
-try:
-    cursor.execute("CREATE DATABASE alx_book_store;")
-except Exception as db_creation_err:
-    print(f"Error creating database: {db_creation_err}")
-
+cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store;")
 print(f"Database 'alx_book_store' created successfully!")
 
 cursor.close()
