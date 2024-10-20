@@ -6,7 +6,7 @@ try:
     user="user",
     password="pass"
     )
-except Exception as db_connection_err:
+except mysql.connector.Error as db_connection_err:
     print(f"Couldn't connect to Database: {db_connection_err}")
     exit()
 
